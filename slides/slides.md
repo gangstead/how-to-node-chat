@@ -1,11 +1,13 @@
-class: center, middle
-background-image: url(slides/hubot.jpg)
+class: middle
+background-image: url(slides/hubot-dark.png)
 
 # How to Node Chat
 ### Steven Gangstead
-### slides https://gangstead.github.io/how-to-node-chat
+
 @Gangstead
-.footnote[.round[![:scale 20%](http://i.imgur.com/ASVOQvZ.jpg)]]
+
+.round[![:scale 16%](slides/vinli-logo.gif)]
+.footnote[slides - https://gangstead.github.io/how-to-node-chat]
 ---
 
 # How To Chat Bot

@@ -15,7 +15,7 @@ h2, h3 {
 }
 .remark-slide-content {
   /* background: #272822; */
-  background: #253030;
+  background: #232526;
   background-repeat: no-repeat;
   background-position: right;
   color: #f3f3f3;
@@ -40,9 +40,9 @@ code {
   border-radius: 5px;
 }
 .round img{
-  -moz-border-radius: 10px;
-  -web-border-radius: 10px;
-  border-radius: 10px;
+  -moz-border-radius: 15px;
+  -web-border-radius: 15px;
+  border-radius: 15px;
 }
 .remark-code, .remark-inline-code {
   font-family: 'Ubuntu Mono';
