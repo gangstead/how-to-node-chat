@@ -98,6 +98,13 @@ yo hubot
            | //|    +===+
             \//      |xx|
 ```
+???
+If doing this interactively
+- go to directory
+- `mkdir mybot`
+- `cl mybot`
+- `yo hubot`
+- `atom .`
 ---
 ```sh
                     _____________________________
@@ -123,7 +130,7 @@ _____              /                             \
 - `external-scripts.json`
 ---
 ```sh
-exec node_modules/.bin/hubot --name "tobor" "$@"
+exec node_modules/.bin/hubot --name "mybot" "$@"
 ```
 ???
 "$@" is just an array of current arguments, passing them on to main hubot script
@@ -185,9 +192,8 @@ class: center, middle
 ---
 # Deploy to Heroku
 
-- blah
-- blah
-- blah
+- Procfile
+
 ---
 class: center, middle
 # Connect to Gitter
@@ -195,9 +201,7 @@ class: center, middle
 ---
 # Connect to Gitter
 
-- blah
-- blah
-- blah
+- Hopefully as simple as getting a new webhook
 ---
 class: center, middle
 # Extension Idea: D&D Dungeon Master
