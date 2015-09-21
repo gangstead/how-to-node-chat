@@ -33,7 +33,7 @@ class: center, middle
 # Key Technologies
 - .round[![:scale 16%](slides/hubot-small.png)] .round[![:scale 30%](slides/nodejs.jpg)] .round[![:scale 15%](slides/coffeescript.png)]
 - ![:scale 30%](slides/npm-logo.png) ![:scale 20%](slides/yeoman-logo.png)
-- ![:scale 30%](slides/Heroku_logo.png) .round[![:scale 30%](slides/gitter.png)] + [28 others](https://hubot.github.com/docs/adapters/)
+- ![:scale 30%](slides/Heroku_logo.png) .round[![:scale 9%](slides/slack.png)]  .round[![:scale 30%](slides/gitter.png)] + [28 others](https://hubot.github.com/docs/adapters/)
 ---
 # What it does?
 ## "At his core, Hubot simply idles in various rooms and waits for specific strings to go by in the chat."
