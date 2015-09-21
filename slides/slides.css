@@ -49,6 +49,7 @@ code {
   font-size: 1em;
 }
 .remark-inline-code {
+  color: yellow;
   padding: .2em;
 }
 .remark-code-line-highlighted     { background-color: #373832; }
