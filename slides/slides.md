@@ -45,7 +45,7 @@ class: center, middle
 ---
 # What it does?
 ## "At ~~his~~ its core, Hubot simply idles in various rooms and waits for ~~specific~~ matching strings to go by in the chat."
-```js
+```coffeescript
 robot.hear /problem\??/i, (msg) ->
   msg.send "http://cl.ly/BG7R/trollface.jpg"
 ```
@@ -56,6 +56,8 @@ robot.hear /problem\??/i, (msg) ->
  - Reads environment variables or command line arguments
 - `index.coffee` - Main entry point
  - Exposes main loadBot function and all other top level modules
+???
+Command line arguments take precedence over env vars
 ---
 # Anatomy - Next Level
 - `User` - Represents a participating user in the chat
@@ -204,15 +206,46 @@ class: center, middle
 - Hopefully as simple as getting a new webhook
 ---
 class: center, middle
+# Why?
+---
+# Why?
+## Serious Things
+- Github pull requests: notify and manage
+- Continuous Integration: warn about failures
+- [Deploying code](http://githubengineering.com/deploying-branches-to-github-com/)
+ - Easier on boarding: just go look at the build channel
+ - High visibility because history in the same application team is already using and searching
+ - Actions mixed with discussion
+- [Stand up alarm](https://github.com/hubot-scripts/hubot-standup-alarm)
+???
+Source for the benefits (in addition to the githubengineering post): http://www.ianbicking.org/blog/2014/02/hubot-chat-web-working-in-the-open.html
+---
+# Why?
+## Fun Things
+-
+---
+# Extensions
+## External
+```sh
+npm search hubot-scripts <search term>
+```
+![search](slides/npm-hubot-search.png)
+## Bundled
+- http://hubot-script-catalog.herokuapp.com/recent
+---
+class: center, middle
 # Extension Idea: D&D Dungeon Master
 ## Send PR to: https://github.com/samiconductor
 
 ---
 # Explore further - links
 
+- Main page: https://hubot.github.com/
+- https://github.com/blog/968-say-hello-to-hubot
+- https://github.com/blog/1241-deploying-at-github
+- http://githubengineering.com/deploying-branches-to-github-com/
 - Podcast: [On Culture and Remoteness at GitHub with Paul Betts and Justin Spahr-Summers](http://hanselminutes.com/375/on-culture-and-remoteness-at-github-with-paul-betts-and-justin-spahr-summers)
-- blah
-- blah
+- http://www.ianbicking.org/blog/2014/02/hubot-chat-web-working-in-the-open.html
 
 ---
 
