@@ -183,27 +183,50 @@ class: center, middle
 
 ---
 # Connect to Slack
+![:scale 40%](slides/slack-configure-integrations.png) ![:scale 55%](slides/slack-configure-integrations-2.png)
 
-- blah
-- blah
-- blah
+---
+# Connect to Slack
+`HUBOT_SLACK_TOKEN=blahblahblah-copied-from-slack bin/hubot --adapter slack`
+```sh
+INFO Connecting...
+INFO Logged in as shufflebot of gangstead, but not yet connected
+INFO Slack client now connected
+ERROR hubot-heroku-alive included, but missing HUBOT_HEROKU_KEEPALIVE_URL. `heroku config:set HUBOT_HEROKU_KEEPALIVE_URL=$(heroku apps:info -s  | grep web_url | cut -d= -f2)`
+INFO hubot-redis-brain: Using default redis on localhost:6379
+```
 ---
 class: center, middle
 # Deploy to Heroku
 
 ---
 # Deploy to Heroku
-
-- Procfile
-
+### Install [Heroku Toolbelt](https://toolbelt.heroku.com/)
+```sh
+heroku create shuffle-bot
+heroku config:add HUBOT_SLACK_TOKEN=xoxo-1234567890-BLAHBLAH1234567890
+heroku config:add HEROKU_URL=http://shuffle-bot.herokuapp.com
+git add --all
+git commit -m "arise shuffle-bot"
+git push heroku master
+```
+???
+Heroku name must be unique.  Don't do this in a git repository
+---
+# Deploy to Heroku bonus
+- `heroku addons:add redistogo:nano`
 ---
 class: center, middle
 # Connect to Gitter
 
 ---
 # Connect to Gitter
-
-- Hopefully as simple as getting a new webhook
+- Get your "Personal Access" token from https://developer.gitter.im/apps
+- `npm install --save hubot-gitter2`
+- `HUBOT_GITTER2_TOKEN=<your token> ./bin/hubot -a gitter2`
+- Bot now talks under your account
+???
+This one is buggier than the slack one.
 ---
 class: center, middle
 # Why?
@@ -221,8 +244,11 @@ class: center, middle
 Source for the benefits (in addition to the githubengineering post): http://www.ianbicking.org/blog/2014/02/hubot-chat-web-working-in-the-open.html
 ---
 # Why?
-## Fun Things
--
+## Useful / Fun Things
+- Weather / traffic
+- The [line at Shake Shak](https://github.com/github/hubot-scripts/blob/master/src/scripts/shakeshack.coffee)
+- pug bomb
+- business cat (responds to jargon)![:scale 25%](http://i.imgur.com/8WsH50B.jpg)
 ---
 # Extensions
 ## External
@@ -232,6 +258,28 @@ npm search hubot-scripts <search term>
 ![search](slides/npm-hubot-search.png)
 ## Bundled
 - http://hubot-script-catalog.herokuapp.com/recent
+???
+Or, you know, google.  CLI search seems to work better than npmjs.org search because it searches the keywords in the package.json, the website appears to be name only.
+
+External - Add to package.json and external-scripts.json, `npm install`)
+Bundled -  Copy to `\scripts`
+---
+# Coffeescript not mandatory
+`\scripts` scanned for `.coffee` and `.js` files
+```coffeescript
+pongs = ["pong", "pool"]
+module.exports = (robot) ->
+  robot.hear /\b(ping)\b/i, (msg) ->
+    msg.send msg.random pongs
+```
+```js
+var pongs = ["pong", "pool"]
+module.exports = function(robot) {
+  return robot.hear(/\b(ping)\b/i, function(msg) {
+    return msg.send(msg.random(pongs));
+  });
+};
+```
 ---
 class: center, middle
 # Extension Idea: D&D Dungeon Master
@@ -246,7 +294,8 @@ class: center, middle
 - http://githubengineering.com/deploying-branches-to-github-com/
 - Podcast: [On Culture and Remoteness at GitHub with Paul Betts and Justin Spahr-Summers](http://hanselminutes.com/375/on-culture-and-remoteness-at-github-with-paul-betts-and-justin-spahr-summers)
 - http://www.ianbicking.org/blog/2014/02/hubot-chat-web-working-in-the-open.html
-
+- http://blog.npmjs.org/post/128237577345/how-to-build-a-slackbot-deploy-an-app-to-heroku
+- https://www.npmjs.com/browse/keyword/hubot-scripts
 ---
 
 # The End
