@@ -203,7 +203,7 @@ class: center, middle
 # Deploy to Heroku
 ### Install [Heroku Toolbelt](https://toolbelt.heroku.com/)
 ```sh
-heroku create shuffle-bot
+heroku create shuffle-bot  # must be in a git repo!
 heroku config:add HUBOT_SLACK_TOKEN=xoxo-1234567890-BLAHBLAH1234567890
 heroku config:add HEROKU_URL=http://shuffle-bot.herokuapp.com
 git add --all
@@ -211,7 +211,8 @@ git commit -m "arise shuffle-bot"
 git push heroku master
 ```
 ???
-Heroku name must be unique.  Don't do this in a git repository
+Heroku create adds a new git remote, if not in a git repository subsequent commands will fail because it can't find a heroku app.
+Heroku name must be unique.  Don't do this in another git repository
 ---
 # Deploy to Heroku bonus
 - `heroku addons:add redistogo:nano`
